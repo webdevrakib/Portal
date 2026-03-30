@@ -1,1 +1,376 @@
 
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Editorial Executive | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#d5e3ff",
+              "secondary-container": "#82f5c1",
+              "on-secondary-fixed": "#002114",
+              "tertiary": "#003c2a",
+              "on-primary-fixed": "#001c3b",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#002116",
+              "on-tertiary": "#ffffff",
+              "primary": "#003466",
+              "inverse-primary": "#a6c8ff",
+              "on-background": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "outline": "#737781",
+              "secondary": "#006c4a",
+              "primary-container": "#1a4b84",
+              "secondary-fixed-dim": "#68dba9",
+              "tertiary-fixed-dim": "#8bd6b6",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#a6c8ff",
+              "outline-variant": "#c3c6d1",
+              "surface": "#f7f9fb",
+              "on-primary-fixed-variant": "#144780",
+              "surface-tint": "#335f99",
+              "secondary-fixed": "#85f8c4",
+              "surface-container-low": "#f2f4f6",
+              "surface-container": "#eceef0",
+              "tertiary-container": "#00553e",
+              "on-primary-container": "#93bcfc",
+              "on-secondary-fixed-variant": "#005137",
+              "on-surface": "#191c1e",
+              "on-surface-variant": "#424750",
+              "on-tertiary-fixed-variant": "#00513b",
+              "error": "#ba1a1a",
+              "background": "#f7f9fb",
+              "on-error-container": "#93000a",
+              "surface-dim": "#d8dadc",
+              "inverse-on-surface": "#eff1f3",
+              "surface-bright": "#f7f9fb",
+              "surface-container-high": "#e6e8ea",
+              "inverse-surface": "#2d3133",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary-container": "#7ec9aa",
+              "tertiary-fixed": "#a6f2d1"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar (Execution from JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-100 dark:bg-slate-900 flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100">The Editorial</h1>
+<p class="text-xs text-slate-500 font-medium">Management Portal</p>
+</div>
+<nav class="flex-grow flex flex-col gap-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-blue-900 dark:text-blue-400 rounded-lg shadow-sm font-semibold transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">tactic</span>
+<span class="font-body">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-body">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body">Reports</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<button class="mb-4 w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 rounded-lg font-bold text-sm shadow-md active:scale-95 transition-transform">
+                Add New Client
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-900 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-900 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-body text-sm">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar (Execution from JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm flex justify-between items-center px-8">
+<div class="flex items-center gap-8">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search executive files..." type="text"/>
+</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 pb-1 font-bold text-sm" href="#">Overview</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 text-sm transition-colors" href="#">Directory</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 text-sm transition-colors" href="#">Board</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Alex Sterling</p>
+<p class="text-[10px] text-on-surface-variant">Principal Partner</p>
+</div>
+<img alt="Executive User Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary/10" data-alt="Professional headshot of a businessman in a tailored navy suit against a clean architectural background with soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_nia4tKIJwwQDALHJIFggwTjtqY6_rl8zBF5hiBGkBxTJxw1MFhuyGUalcmMomQSmUsEIevc103RcbrnVWeBE4PM9zodlI-E4xPepz4-DQOv8fsftoLxiSM7rSdHzYdeZAcfopYhrZSbef4cz7sidIQINgaDe-B4hb7cfBRqASD0S95JfKXhWwqv9qrEERHmcZ6941jH-5rv8JBuOnvHteS9Pb6XEloDAkNmqWbOZEJDWV3ORIfyvaP6C2zSNXRsrLQFdXWBbyM"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12">
+<!-- Header Section -->
+<header class="mb-10">
+<h2 class="text-3xl font-extrabold tracking-tight text-primary mb-2 font-headline">Executive Briefing</h2>
+<p class="text-on-surface-variant max-w-2xl">Good morning, Alex. Your client portfolio is showing a 12% growth this quarter. Here are your priority action items for today.</p>
+</header>
+<!-- Bento Grid Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<!-- Metric Card: Total Clients -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col justify-between aspect-square md:aspect-auto h-40">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg">group</span>
+<span class="text-secondary text-xs font-bold bg-secondary-container/30 px-2 py-1 rounded-full">+4 this month</span>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-primary font-headline">128</p>
+<p class="text-sm font-medium text-on-surface-variant">Total Clients</p>
+</div>
+</div>
+<!-- Metric Card: Active Projects -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg">tactic</span>
+</div>
+<div>
+<div class="flex items-end gap-2">
+<p class="text-4xl font-extrabold text-primary font-headline">24</p>
+<div class="flex gap-1 mb-2">
+<div class="w-1.5 h-4 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-6 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-3 bg-secondary rounded-full"></div>
+</div>
+</div>
+<p class="text-sm font-medium text-on-surface-variant">Active Projects</p>
+</div>
+</div>
+<!-- Metric Card: Pending Tasks -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/5 p-2 rounded-lg">assignment</span>
+<div class="w-10 h-10 rounded-full border-4 border-primary/10 border-t-primary flex items-center justify-center">
+<span class="text-[10px] font-bold">68%</span>
+</div>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-primary font-headline">14</p>
+<p class="text-sm font-medium text-on-surface-variant">Pending Tasks</p>
+</div>
+</div>
+<!-- Metric Card: Monthly Revenue -->
+<div class="bg-primary p-6 rounded-xl shadow-lg flex flex-col justify-between h-40 text-on-primary">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-fixed bg-white/10 p-2 rounded-lg">payments</span>
+</div>
+<div>
+<p class="text-3xl font-extrabold font-headline">$42.8k</p>
+<p class="text-xs font-medium text-primary-fixed/80">Projected Revenue (Oct)</p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Column: Activity Feed -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold text-primary font-headline">Recent Activity</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-8">
+<!-- Activity Item -->
+<div class="flex gap-6 items-start relative pb-8 before:content-[''] before:absolute before:left-[1.25rem] before:top-[2.5rem] before:bottom-0 before:w-[1px] before:bg-outline-variant/30 last:pb-0 last:before:hidden">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Milestone Achieved: Zenith Corp</h4>
+<span class="text-xs text-on-surface-variant font-medium">2h ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Phase 2: Strategy Architecture has been approved by the board. Invoicing for $12,500 initiated.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded uppercase tracking-wider text-outline">Project Management</span>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-6 items-start relative pb-8 before:content-[''] before:absolute before:left-[1.25rem] before:top-[2.5rem] before:bottom-0 before:w-[1px] before:bg-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">person_add</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">New Client Onboarded: Luminous Media</h4>
+<span class="text-xs text-on-surface-variant font-medium">5h ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Contract signed for high-level quarterly consulting. Account manager assigned to Sarah Jenkins.</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-6 items-start">
+<div class="w-10 h-10 rounded-full bg-error-container/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Task Overdue: Nova Retail</h4>
+<span class="text-xs text-on-surface-variant font-medium">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Tax compliance report for Q3 is 24 hours past due. Urgent attention required from the compliance team.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Project Card (Asymmetric Layout) -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden flex flex-col md:flex-row border border-outline-variant/10">
+<div class="md:w-1/2 p-8 flex flex-col justify-center">
+<span class="text-secondary font-bold text-xs uppercase tracking-[0.2em] mb-4">Focus Project</span>
+<h3 class="text-2xl font-extrabold text-primary mb-4 font-headline leading-tight">Infrastructure Redevelopment <br/>for Horizon Real Estate</h3>
+<p class="text-on-surface-variant text-sm mb-6">Current progress at 74%. Final documentation review scheduled for Friday morning with the executive steering committee.</p>
+<div class="w-full bg-white rounded-full h-1.5 mb-6">
+<div class="bg-secondary h-1.5 rounded-full w-[74%]"></div>
+</div>
+<button class="bg-white text-primary border border-outline-variant/30 px-6 py-2.5 rounded-lg text-sm font-bold w-fit hover:bg-primary hover:text-white transition-all">Project Workspace</button>
+</div>
+<div class="md:w-1/2 min-h-[300px] relative">
+<img alt="Modern Architecture" class="absolute inset-0 w-full h-full object-cover" data-alt="Stunning low angle shot of modern glass skyscrapers with geometric patterns reflecting a clear blue sky and soft clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWTninsdjbpXDQJtC0T8p5OmiWgzAXoyGjnNu2EKYIQiNY-FqegjPyV5YPguaCrhZFdzTgnT8HT_zEgnX0_AYCwI5oRsTbi4a794Tgj6Rag0eB3tscCgacAC8HvFQWAUtbbwBqmUywp6_UXUgkZQMWO5Ey66kp4WZ3PdFjaKlpabF5uKj9ItDvKDqKkdVuf0S2JL1lb3fQcieQigfUPZPix4aCX6n3dQ-f-QGaAmWRRAIJKLh3E22OpvbpCX53gVKtkQVIOgTC0pI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Sidebar Column: Deadlines & Quick Stats -->
+<div class="space-y-8">
+<!-- Upcoming Deadlines -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10">
+<h3 class="text-lg font-bold text-primary mb-6 font-headline flex items-center gap-2">
+<span class="material-symbols-outlined">schedule</span>
+                        Upcoming Deadlines
+                    </h3>
+<div class="space-y-4">
+<div class="p-4 bg-surface rounded-xl border-l-4 border-error">
+<p class="text-[10px] font-bold text-error uppercase tracking-widest mb-1">Today, 4:00 PM</p>
+<h4 class="font-bold text-on-surface text-sm mb-1">Board Presentation</h4>
+<p class="text-xs text-on-surface-variant">Client: Apex Global Logistics</p>
+</div>
+<div class="p-4 bg-surface rounded-xl border-l-4 border-secondary">
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1">Oct 24, 2023</p>
+<h4 class="font-bold text-on-surface text-sm mb-1">Contract Renewal</h4>
+<p class="text-xs text-on-surface-variant">Client: Green Energy Corp</p>
+</div>
+<div class="p-4 bg-surface rounded-xl border-l-4 border-primary">
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Oct 26, 2023</p>
+<h4 class="font-bold text-on-surface text-sm mb-1">Budget Approval</h4>
+<p class="text-xs text-on-surface-variant">Project: Internal Audit</p>
+</div>
+<div class="p-4 bg-surface rounded-xl border-l-4 border-outline-variant">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Oct 29, 2023</p>
+<h4 class="font-bold text-on-surface text-sm mb-1">Team Sync-up</h4>
+<p class="text-xs text-on-surface-variant">All Stakeholders</p>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-outline-variant/30 rounded-lg text-sm font-bold text-on-surface-variant hover:bg-surface-container transition-colors">
+                        View Full Calendar
+                    </button>
+</div>
+<!-- Status Pillars (Signature Component) -->
+<div class="bg-white rounded-2xl p-6 border border-outline-variant/10">
+<h3 class="text-lg font-bold text-primary mb-6 font-headline">Portfolio Health</h3>
+<div class="flex justify-between items-end h-48 gap-4 px-2">
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-tertiary-container/10 rounded-full h-32 relative flex items-end overflow-hidden">
+<div class="bg-secondary w-full" style="height: 85%"></div>
+</div>
+<span class="text-[10px] font-bold text-outline">Retention</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-tertiary-container/10 rounded-full h-32 relative flex items-end overflow-hidden">
+<div class="bg-secondary w-full" style="height: 62%"></div>
+</div>
+<span class="text-[10px] font-bold text-outline">Velocity</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-tertiary-container/10 rounded-full h-32 relative flex items-end overflow-hidden">
+<div class="bg-secondary w-full" style="height: 94%"></div>
+</div>
+<span class="text-[10px] font-bold text-outline">Sat Score</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-full">
+<div class="w-full bg-tertiary-container/10 rounded-full h-32 relative flex items-end overflow-hidden">
+<div class="bg-primary/20 w-full" style="height: 45%"></div>
+</div>
+<span class="text-[10px] font-bold text-outline">Pipeline</span>
+</div>
+</div>
+</div>
+<!-- Quick Actions Card -->
+<div class="bg-gradient-to-br from-secondary to-tertiary rounded-2xl p-6 text-on-secondary shadow-xl shadow-secondary/20">
+<h3 class="font-headline font-bold mb-4">Direct Command</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors gap-2 group">
+<span class="material-symbols-outlined text-secondary-container">add_card</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">New Invoice</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors gap-2 group">
+<span class="material-symbols-outlined text-secondary-container">person_search</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Find Client</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors gap-2 group">
+<span class="material-symbols-outlined text-secondary-container">summarize</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Export PDF</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors gap-2 group">
+<span class="material-symbols-outlined text-secondary-container">mail</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Broadcast</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB (Suppressed on Dashboard as per hierarchy logic, but keeping reference for interaction) -->
+<!-- Suppressed on Dashboard/Details screens as per instructions -->
+</body></html>
